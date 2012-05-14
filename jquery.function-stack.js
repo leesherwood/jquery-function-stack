@@ -182,7 +182,6 @@
 				return;
 				
 				
-			
 			var item = this.stack.shift(); 
 			
 			/** 
@@ -212,12 +211,7 @@
 		 */
 		isEmpty: function() {
 			return this.count() > 0 ? false : true;
-		},
-		
-		
-		
-		
-		
+		}
 		
 	
 	};
