@@ -19,7 +19,6 @@
 	
 	var stacks = {};
 	var undef = "undefined";
-
 	
 	/**
 	 * Constructors and Destructors
