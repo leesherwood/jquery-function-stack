@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Example Function Stack</title>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="jquery.function-stack.js"></script> 
+	</head>
+	<body>
+		
+		<button id="addrand">Add 10 autofires</button>
+		<button id="addrand2">Add 10 manuals</button>
+		<button id="nxt">Run next in stack</button>
+		<div id="output"></div>
+		
+		<script>
+			var stack = $.functionStack.create('stack');
+			
+			$('#addrand').click(function(){
+				for(var i=1; i<=10; i++) {
+					stack.add(somefunc);
+				}	
+			});
+			
+			$('#addrand2').click(function(){
+				for(var i=1; i<=10; i++) {
+					stack.add({ autonext: false, run: somefuncMan });
+				}	
+			});
+			
+			$('#nxt').click(function(){ stack.next(); });
+			
+			
+			function somefunc() {
+				$('#output').prepend("<span>Doing something auto... </span><br />");
+			}
+			
+			function somefuncMan() {
+				$('#output').prepend("<span>Doing something manual... </span><br />");
+			}
+			
+			
+			
+		</script>
+		
+	</body>
+</html>
