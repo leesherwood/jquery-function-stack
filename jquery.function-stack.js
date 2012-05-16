@@ -14,7 +14,7 @@
  * If you use this plugin, then let me know at: i-played-with-your-git@secure4sure.org
  */
  
-;(function($){
+;(function($){ 
 	"use strict";
 	
 	var stacks = {};
@@ -184,10 +184,10 @@
 			var item = this.stack.shift(); 
 			
 			/** 
-			 * Run the function passing in the stack as "this". 
+			 * Run the function passing in the stack as "this.functionStack". 
 			 * This will help when manually firing the next stack cycle 
 			 */
-			item.run.apply(this); 
+			item.run.apply({ 'functionStack': this }); 
 			
 			/**
 			 * If we have to automagically run the next one, then do so!
